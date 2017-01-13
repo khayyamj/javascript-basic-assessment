@@ -55,33 +55,52 @@ var snake = {
 	smells: 'heat',
 	runs: 'legless'
 };
+for (var key in snake) {
+	if (key.charAt(0) === 's') {
+		snake[key] = 's';
+	}
+}
 
 //#7 Create an array of strings that are the 7 primary colors in the rainbow - red, orange, yellow, green, blue, indigo, violet (lower-case). Call your array rainbowColors
-
+var rainbowColors = ['red','orange','yellow','green','blue','indigo','violet']
 // #8 Using this array do the following
 var heroes = ['superman', 'batman', 'flash'];
 // add 'wonderwoman' to the end
-
+heroes.push('wonderwoman');
 // remove 'superman' and store him in a variable called firstHero
-
+var firstHero = heroes.shift();
 // add 'spongebob' to the start of the array
-
+heroes.unshift('spongebob');
 // remove 'flash' from the array and store him in a variable called secondHero
-
+var secondHero = heroes.splice(2,1);
 // leave batman in the array but put a copy of him on a variable called thirdHero
+var thirdHero = heroes.slice(1,2);
+console.log ("Question #8: ",thirdHero,heroes);
 
 
 
 
 // #9 Write a function called addItem that takes in an array, an item, and adds the item to
 // the array.
-
+function addItem(arr,item) {
+	arr.push(item);
+	return arr;
+};
 
 // #10 Write a function called removeItem that takes in an array of strings, and a string.
+function removeItem(arr,str) {
 
 // Removes all instances of that string from the array. And return the modified array.
 // The order of the array should not be changed
-
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i] === str) {
+			arr.splice(i,1);
+			i--;
+		}
+	}
+console.log (arr);
+return arr;
+};
 // #11 Write a function  called doubleTheFun that takes 1 parameter. It should double numbers, and
 // repeats strings. example 4->8, 2.5->5, 'Awesome'->'AwesomeAwesome'
 
