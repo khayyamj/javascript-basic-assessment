@@ -98,33 +98,70 @@ function removeItem(arr,str) {
 			i--;
 		}
 	}
-console.log (arr);
 return arr;
 };
 // #11 Write a function  called doubleTheFun that takes 1 parameter. It should double numbers, and
 // repeats strings. example 4->8, 2.5->5, 'Awesome'->'AwesomeAwesome'
-
+function doubleTheFun(param) {
+	var result = '';
+	(Number(param)) ? result = (Number(param) + Number(param)) : result = (param+param);
+	return result;
+};
 
 
 // #12 Write function getValueOfProperty that takes in an object, and the name of a property on the object
 // return the value from the object that corresponds to the property
-
+function getValueOfProperty(obj,name) {
+return obj[name];
+};
 
 // #13 Write a function called makeChatMessage that takes in a message and author as parameters
 // and returns an object with a message, author, and timestamp, that is
 // the current time as a Date object
-
-// #14 Create a function called coderTest that takes in an object that is a person. It looks to see if the person’s name is Jeremy and then changes the person object to have a property called lovesCode with a value of 10.  If their name is Brack set lovesCode to 0.  otherwise set lovesCode to 5.
-
+function makeChatMessage(message, author) {
+var obj = {};
+obj.message = message;
+obj.author = author;
+obj.timestamp = Date();
+console.log('Question #13: ',obj);
+return obj;
+};
+// #14 Create a function called coderTest that takes in an object that is a person. It looks to see if the person’s name is Jeremy
+// and then changes the person object to have a property called lovesCode with a value of 10.  If their name is Brack set lovesCode to 0.  otherwise set lovesCode to 5.
+function coderTest(person) {
+		(person.name === 'Jeremy') ? (person.lovesCode = 10) : (person.name === 'Brack') ? (person.lovesCode = 0) : (person.lovesCode = 5);
+	return person;
+};
 
 // #15 Create a function called outside that takes in a temperature (number), a humidity(number), and a cloudiness(number), in that order. Using the following to return the correct values
 /*
-    temperature over 80 and humidity over 40 - return "I'm all sweat"
     temperature under 40 and cloudiness over 60 - return "I have icecicles"
+		temperature over 80 and humidity over 40 - return "I'm all sweat"
     temperature over 80 and humidity under 40 and cloudiness under 20 - return "I'm literally in the desert"
     temperature over 80 or humidity over 50 or cloudiness over 50 - return "Hmm, probably not"
     Otherwise - return "I love outside"
 */
+function outside(temp,humidity,cloudiness) {
+		var value = 'I love outside';
+		console.log('Question #15 - needs some manipulation');
+		if (temp < 40 && cloudiness > 60) {
+				return 'I have icecicles';
+		}
+		else if (temp > 80 || humidity > 50 || cloudiness > 50) {
+			return "Hmm, probably not";
+		}
+		else if (temp > 80 && humidity > 40) {
+				return "I'm all sweat";
+		}
+		else if (temp > 80 && humidity < 40) {
+			return "I'm literally in the desert";
+		}
 
+	return value;
+};
 // #16 Create a function called callerBack that takes in a function (holla) and a string parameter(back) and invokes it(holla) with the argument string(back) + ' back'."
 // example - If I call you with 'Give it' you should invoke holla with 'Give it back'
+function callerBack(holla,str) {
+	var back = str + ' back';
+return holla(back);
+};
