@@ -74,11 +74,7 @@ heroes.unshift('spongebob');
 // remove 'flash' from the array and store him in a variable called secondHero
 var secondHero = heroes.splice(2,1);
 // leave batman in the array but put a copy of him on a variable called thirdHero
-var thirdHero = heroes.slice(1,2);
-console.log ("Question #8: ",thirdHero,heroes);
-
-
-
+var thirdHero = heroes[1];
 
 // #9 Write a function called addItem that takes in an array, an item, and adds the item to
 // the array.
@@ -119,13 +115,17 @@ return obj[name];
 // and returns an object with a message, author, and timestamp, that is
 // the current time as a Date object
 function makeChatMessage(message, author) {
-var obj = {};
-obj.message = message;
-obj.author = author;
-obj.timestamp = Date();
-console.log('Question #13: ',obj);
+var obj = {
+	message: message,
+	author: author,
+	timestamp: new Date()
+};
+console.log('Question #13 -> ', obj);
 return obj;
 };
+// Expected Date(Fri Jan 13 2017 16:07:47 GMT-0700 (MST)) to equal Date(Fri Jan 13 2017 16:07:47 GMT-0700 (MST))
+
+
 // #14 Create a function called coderTest that takes in an object that is a person. It looks to see if the person’s name is Jeremy
 // and then changes the person object to have a property called lovesCode with a value of 10.  If their name is Brack set lovesCode to 0.  otherwise set lovesCode to 5.
 function coderTest(person) {
