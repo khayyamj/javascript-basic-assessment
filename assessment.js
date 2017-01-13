@@ -143,21 +143,19 @@ function coderTest(person) {
 */
 function outside(temp,humidity,cloudiness) {
 		var value = 'I love outside';
-		console.log('Question #15 - needs some manipulation');
-		if (temp < 40 && cloudiness > 60) {
+		if (temp < 40 && cloudiness > 60) { //    temperature under 40 and cloudiness over 60 - return "I have icecicles"
 				return 'I have icecicles';
 		}
-		else if (temp > 80 || humidity > 50 || cloudiness > 50) {
-			return "Hmm, probably not";
-		}
-		else if (temp > 80 && humidity > 40) {
+		else if (temp > 80 && humidity > 40) { //		temperature over 80 and humidity over 40 - return "I'm all sweat"
 				return "I'm all sweat";
 		}
-		else if (temp > 80 && humidity < 40) {
-			return "I'm literally in the desert";
+		else if (temp > 80 && humidity < 40 && cloudiness < 20) { //    temperature over 80 and humidity under 40 and cloudiness under 20 - return "I'm literally in the desert"
+				return "I'm literally in the desert";
 		}
-
-	return value;
+		else if (temp > 80 || humidity > 50 || cloudiness > 50) {//    temperature over 80 or humidity over 50 or cloudiness over 50 - return "Hmm, probably not"
+					return "Hmm, probably not";
+			}
+return value;
 };
 // #16 Create a function called callerBack that takes in a function (holla) and a string parameter(back) and invokes it(holla) with the argument string(back) + ' back'."
 // example - If I call you with 'Give it' you should invoke holla with 'Give it back'
